@@ -21,11 +21,9 @@ steps:
     packageType: sdk
     version: '5.x'
 
-- task: Bash@3
-  displayName: 'Run npm install'
-  inputs:
-    targetType: 'inline'
-    arguments: npm install
+- bash: |
+      npm install
+   displayName: run npm install
 
 - script: './node_modules/.bin/node-sass Tailspin.SpaceGame.Web/wwwroot --output Tailspin.SpaceGame.Web/wwwroot'
   displayName: 'Compile Sass assets'
